@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Павел и Екатерина — Наша Свадьба 10.10.2026</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="//yandex.ru">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;600;700&family=Dancing+Script:wght@400;700&family=Cormorant:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;600;700&family=Dancing+Script:wght@400;700&family=Cormorant:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Cormorant Garamond', serif; background-color: #e8e2db; overflow-x: hidden; }
+
+        .intro-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #d1c4b6 0%, #b8a99a 100%); z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.8s ease, visibility 0.8s ease; overflow: hidden; }
+        .intro-overlay.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+        .intro-pearls { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+        .intro-pearl { position: absolute; border-radius: 50%; background: radial-gradient(circle at 25% 25%, #ffffff 0%, #f0ebe5 25%, #d4cdc4 60%, #b8b0a5 100%); box-shadow: 0 2px 4px rgba(0,0,0,0.2), inset 0 -2px 3px rgba(0,0,0,0.15), inset 0 2px 4px rgba(255,255,255,0.9), 0 0 8px rgba(255,255,255,0.4); animation: floatPearl 4s ease-in-out infinite; }
+        @keyframes floatPearl { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        .intro-title { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 400; color: #f5f0eb; text-align: center; margin-bottom: 40px; line-height: 1.3; z-index: 2; text-shadow: 0 2px 10px rgba(0,0,0,0.2); animation: fadeInDown 1s ease-out; }
+        .intro-envelope { position: relative; width: 280px; height: 180px; cursor: pointer; z-index: 2; animation: fadeInUp 1s ease-out 0.3s both, gentleFloat 3s ease-in-out infinite 1.3s; transition: transform 0.3s ease; }
+        .intro-envelope:hover { transform: scale(1.05); animation-play-state: paused; }
+        @keyframes gentleFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        .envelope-body { position: absolute; bottom: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #f5f0eb 0%, #e8e0d9 100%); border-radius: 0 0 8px 8px; box-shadow: 0 15px 35px rgba(0,0,0,0.25); z-index: 2; }
+        .envelope-flap-left, .envelope-flap-right, .envelope-flap-bottom { position: absolute; bottom: 0; width: 0; height: 0; border-style: solid; z-index: 3; }
+        .envelope-flap-left { border-width: 90px 0 90px 140px; border-color: transparent transparent transparent #ebe5dd; }
+        .envelope-flap-right { border-width: 90px 140px 90px 0; border-color: transparent #ebe5dd transparent transparent; }
+        .envelope-flap-bottom { border-width: 0 140px 90px 140px; border-color: transparent transparent #f5f0eb transparent; z-index: 4; }
+        .envelope-flap-top { position: absolute; top: 0; left: 0; width: 0; height: 0; border-style: solid; border-width: 90px 140px 0 140px; border-color: #ebe5dd transparent transparent transparent; z-index: 5; transform-origin: top; transition: transform 0.6s ease, z-index 0.1s 0.3s; }
+        .intro-envelope.opened .envelope-flap-top { transform: rotateX(180deg); z-index: 1; }
+        .wax-seal { position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%); width: 70px; height: 70px; background: radial-gradient(circle at 30% 30%, #1e3928, #122914); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #f5f0eb; font-family: 'Great Vibes', cursive; font-size: 24px; z-index: 6; box-shadow: 0 4px 10px rgba(0,0,0,0.4), inset 0 2px 4px rgba(255,255,255,0.3), 0 0 0 4px rgba(139, 69, 69, 0.4); transition: transform 0.6s ease, opacity 0.3s ease; }
+        .intro-envelope.opened .wax-seal { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+        .intro-hint { margin-top: 30px; font-family: 'Cormorant Garamond', serif; font-size: 18px; color: #f5f0eb; font-style: italic; z-index: 2; animation: pulseHint 2s infinite; }
+        @keyframes pulseHint { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+
+        .page-wrapper { max-width: 430px; margin: 0 auto; min-height: 100vh; position: relative; background: linear-gradient(180deg, #f5f0eb 0%, #ebe5dd 50%, #e3dcd3 100%); overflow-x: hidden; }
+        .page-wrapper::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E"); pointer-events: none; z-index: 1; mix-blend-mode: multiply; }
+        .page-wrapper::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, transparent 40%, rgba(139, 115, 85, 0.08) 100%); pointer-events: none; z-index: 2; }
+        .gold-foil { background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%); -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: 0 1px 2px rgba(191, 149, 63, 0.2); }
+        .header { display: flex; justify-content: flex-end; align-items: center; padding: 20px 15px 10px; position: relative; z-index: 10; }
+        .header-center { position: absolute; left: 50%; transform: translateX(-50%); text-align: center; }
+        .logo { font-family: 'Great Vibes', cursive; font-size: 34px; letter-spacing: 1px; line-height: 1; }
+        .date { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 300; color: #666; letter-spacing: 6px; margin-top: 4px; }
+        .btn-menu { width: 44px; height: 44px; border: 1.5px solid #a89f93; border-radius: 50%; background: rgba(255,255,255,0.3); backdrop-filter: blur(5px); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .btn-menu:hover { background: rgba(255,255,255,0.6); border-color: #8b7355; }
+        .btn-menu svg { width: 20px; height: 20px; stroke: #555; fill: none; stroke-width: 1.8; }
+
+        .pearl-decoration { position: absolute; top: 0; width: 80px; height: 100%; pointer-events: none; z-index: 5; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.15)); }
+        .pearl-left { left: 0; } .pearl-right { right: 0; }
+        .pearl-string { position: absolute; width: 100%; height: 100%; }
+        .pearl, .invitation-pearl, .quote-pearl, .frame-pearl, .corner-pearl, .countdown-pearl, .pearl-drop, .brooch-pearl, .event-pearl, .path-pearl, .venue-pearl, .side-pearl, .card-corner-pearl { position: relative; }
+        .pearl::before, .invitation-pearl::before, .quote-pearl::before, .frame-pearl::before, .corner-pearl::before, .countdown-pearl::before, .pearl-drop::before, .brooch-pearl::before, .event-pearl::before, .path-pearl::before, .venue-pearl::before, .side-pearl::before, .card-corner-pearl::before { content: ''; position: absolute; top: 15%; left: 20%; width: 35%; height: 25%; background: radial-gradient(ellipse at center, #ffffff 0%, rgba(255,255,255,0.95) 40%, rgba(255,255,255,0) 70%); border-radius: 50%; filter: blur(0.5px); z-index: 2; pointer-events: none; }
+        .pearl { position: absolute; border-radius: 50%; background: radial-gradient(circle at 25% 25%, #ffffff 0%, #f0ebe5 25%, #d4cdc4 60%, #b8b0a5 100%); box-shadow: 0 2px 4px rgba(0,0,0,0.2), inset 0 -2px 3px rgba(0,0,0,0.15), inset 0 2px 4px rgba(255,255,255,0.9), 0 0 8px rgba(255,255,255,0.4); }
+        .pearl-left .pearl:nth-child(1) { width: 18px; height: 18px; top: 60px; left: 15px; }
+        .pearl-left .pearl:nth-child(2) { width: 16px; height: 16px; top: 90px; left: 8px; }
+        .pearl-left .pearl:nth-child(3) { width: 20px; height: 20px; top: 120px; left: 2px; }
+        .pearl-left .pearl:nth-child(4) { width: 17px; height: 17px; top: 155px; left: 10px; }
+        .pearl-left .pearl:nth-child(5) { width: 15px; height: 15px; top: 185px; left: 20px; }
+        .pearl-left .pearl:nth-child(6) { width: 19px; height: 19px; top: 215px; left: 12px; }
+        .pearl-left .pearl:nth-child(7) { width: 16px; height: 16px; top: 250px; left: 5px; }
+        .pearl-right .pearl:nth-child(1) { width: 17px; height: 17px; top: 50px; right: 10px; }
+        .pearl-right .pearl:nth-child(2) { width: 20px; height: 20px; top: 85px; right: 3px; }
+        .pearl-right .pearl:nth-child(3) { width: 16px; height: 16px; top: 118px; right: 12px; }
+        .pearl-right .pearl:nth-child(4) { width: 18px; height: 18px; top: 148px; right: 6px; }
+        .pearl-right .pearl:nth-child(5) { width: 15px; height: 15px; top: 180px; right: 18px; }
+        .pearl-right .pearl:nth-child(6) { width: 19px; height: 19px; top: 210px; right: 8px; }
+        .pearl-right .pearl:nth-child(7) { width: 16px; height: 16px; top: 245px; right: 2px; }
+
+        .main-content { text-align: center; padding: 30px 30px 0; position: relative; z-index: 8; }
+        .names { font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 400; line-height: 1.1; letter-spacing: 3px; margin-bottom: 15px; color: #1a1a1a; text-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .names .first-name, .names .second-name { display: block; }
+        .subtitle { font-family: 'Great Vibes', cursive; font-size: 34px; color: #8b7355; margin-bottom: 20px; font-weight: 400; }
+
+        .photo-section { position: relative; width: 100%; margin-top: 10px; }
+        .photo-container { position: relative; width: 100%; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .photo-container img { width: 100%; height: auto; display: block; filter: grayscale(100%) contrast(1.1) brightness(0.95); object-fit: cover; }
+        .photo-overlay { position: absolute; top: 0; left: 0; right: 0; height: 250px; background: linear-gradient(180deg, #f5f0eb 0%, rgba(245, 240, 235, 0.9) 20%, rgba(245, 240, 235, 0.4) 60%, transparent 100%); pointer-events: none; z-index: 2; }
+        .photo-overlay-bottom { position: absolute; bottom: 0; left: 0; right: 0; height: 200px; background: linear-gradient(0deg, #ebe5dd 0%, rgba(235, 229, 221, 0.8) 30%, rgba(235, 229, 221, 0.3) 70%, transparent 100%); pointer-events: none; z-index: 2; }
+
+        .quote-section { padding: 60px 30px; position: relative; z-index: 8; background: linear-gradient(180deg, #ebe5dd 0%, #f5f0eb 100%); text-align: center; }
+        .quote-container { max-width: 380px; margin: 0 auto; position: relative; }
+        .quote-decoration { display: flex; align-items: center; justify-content: center; margin: 15px 0; gap: 12px; }
+        .quote-line { height: 1px; width: 45px; background: linear-gradient(90deg, transparent 0%, #b8b0a5 50%, transparent 100%); }
+        .quote-pearl { width: 7px; height: 7px; border-radius: 50%; background: radial-gradient(circle at 25% 25%, #ffffff 0%, #f0ebe5 25%, #d4cdc4 60%, #b8b0a5 100%); box-shadow: 0 2px 4px rgba(0,0,0,0.2), inset 0 -1px 2px rgba(0,0,0,0.15), inset 0 1px 2px rgba(255,255,255,0.9), 0 0 6px rgba(255,255,255,0.5); }
+        .quote-text { font-family: 'Cormorant Garamond', serif; font-size: 11px; font-weight: 600; line-height: 1.5; color: #2a2a2a; text-transform: uppercase; letter-spacing: 0.5px; text-align: center; text-shadow: 0 1px 1px rgba(255,255,255,0.8), 0 -1px 1px rgba(0,0,0,0.05); margin: 0; }
+
+        .invitation-section { padding: 50px 15px 70px; position: relative; z-index: 8; background: linear-gradient(180deg, #f5f0eb 0%, #ebe5dd 100%); }
+        .invitation-section::before { content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 150%; height: 150%; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cpath d='M150 50 C 100 50, 50 100, 50 150 C 50 220, 120 250, 150 250 C 180 250, 250 220, 250 150 C 250 100, 200 50, 150 50 Z' fill='none' stroke='%23b8b0a5' stroke-width='1.5' opacity='0.06'/%3E%3Cpath d='M150 90 C 120 90, 90 120, 90 150 C 90 190, 130 210, 150 210 C 170 210, 210 190, 210 150 C 210 120, 180 90, 150 90 Z' fill='none' stroke='%23b8b0a5' stroke-width='1' opacity='0.05'/%3E%3C/svg%3E"); background-size: 200px 200px; pointer-events: none; z-index: 0; }
+        .invitation-header { text-align: center; margin-bottom: 25px; position: relative; z-index: 1; }
+        
+        /* УМЕНЬШЕННЫЙ РАЗМЕР ТЕКСТА "ДОРОГИЕ РОДНЫЕ & ДРУЗЬЯ!" */
+        .invitation-title { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 22px; /* Было 30px */
+            font-weight: 600; 
+            color: #2a2a2a; 
+            letter-spacing: 2px; /* Было 5px */
+            margin-bottom: 5px; 
+        }
+        
+        .invitation-subtitle { font-family: 'Dancing Script', cursive; font-size: 30px; color: #8b7355; font-style: italic; }
+        .invitation-pearls { display: flex; justify-content: center; align-items: center; gap: 10px; margin: 25px 0; flex-wrap: wrap; position: relative; z-index: 1; }
+        .invitation-pearl { width: 12px; height: 12px; border-radius: 50%; background: radial-gradient(circle at 25% 25%, #ffffff 0%, #f0ebe5 25%, #d4cdc4 60%, #b8b0a5 100%); box-shadow: 0 2px 4px rgba(0,0,0,0.2), inset 0 -1px 2px rgba(0,0,0,0.15), inset 0 1px 2px rgba(255,255,255,0.9), 0 0 8px rgba(255,255,255,0.5); }
+        .envelope-container { position: relative; width: 95%; max-width: 400px; margin: 0 auto; padding: 15px; z-index: 1; }
+        .envelope { position: relative; background-color: #d4ccc4; background-image: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(255,255,255,0.1) 4px, rgba(255,255,255,0.1) 5px); border-radius: 8px; padding: 45px 15px 55px; box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 4px 8px rgba(0,0,0,0.05), 0 12px 24px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.3); }
+        .envelope::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 65px; background: linear-gradient(135deg, #c9c1b9 0%, #d4ccc4 50%, #c9c1b9 100%); border-radius: 8px 8px 0 0; clip-path: polygon(0 0, 100% 0, 50% 100%); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .envelope::after { content: ''; position: absolute; top: 65px; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent); }
+        .envelope-card-main { background-color: #faf9f7; background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(184, 176, 165, 0.08) 2px, rgba(184, 176, 165, 0.08) 3px), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(184, 176, 165, 0.08) 2px, rgba(184, 176, 165, 0.08) 3px); padding: 35px 25px; border-radius: 4px; position: relative; box-shadow: 0 2px 4px rgba(0,0,0,0.05), 0 8px 16px rgba(0,0,0,0.08), inset 0 0 25px rgba(184, 176, 165, 0.1), inset 0 1px 0 rgba(255,255,255,1); margin-bottom: 20px; border: 1px solid rgba(184, 176, 165, 0.2); }
+        .paper-clip { position: absolute; top: -18px; right: -12px; width: 32px; height: 55px; border: 3px solid #a89f93; border-radius: 16px; transform: rotate(12deg); background: linear-gradient(135deg, #e0e0e0, #a89f93); box-shadow: 0 3px 6px rgba(0,0,0,0.2); }
+        .paper-clip::before { content: ''; position: absolute; top: 6px; left: 6px; right: 6px; bottom: 6px; border: 2px solid #c4bdb6; border-radius: 10px; }
+        .card-text-main { font-family: 'Cormorant Garamond', serif; font-size: 19px; line-height: 1.6; color: #3a3a3a; text-align: center; font-weight: 400; }
+        .card-text-main p { margin-bottom: 16px; }
+        .decorative-line { width: 80px; height: 1px; background: linear-gradient(90deg, transparent 0%, #b8b0a5 50%, transparent 100%); margin: 25px auto; }
+        .monogram { font-family: 'Great Vibes', cursive; font-size: 42px; text-align: center; margin-top: 15px; color: #b89a6a; text-shadow: 1px 1px 0px rgba(0,0,0,0.1), -1px -1px 0px rgba(255,255,255,0.4); }
+
+        .calendar-section { padding: 50px 20px 70px; position: relative; z-index: 8; background: linear-gradient(180deg, #ebe5dd 0%, #f5f0eb 100%); }
+        .calendar-container { max-width: 380px; margin: 0 auto; background-color: #faf9f7; background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(184, 176, 165, 0.08) 2px, rgba(184, 176, 165, 0.08) 3px), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(184, 176, 165, 0.08) 2px, rgba(184, 176, 165, 0.08) 3px); padding: 45px 30px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 10px 25px rgba(0,0,0,0.08), inset 0 0 0 1px rgba(255,255,255,0.8), inset 0 2px 4px rgba(0,0,0,0.03); position: relative; }
+        .calendar-month { font-family: 'Cormorant', serif; font-size: 38px; font-weight: 400; color: #2a2a2a; text-align: center; letter-spacing: 8px; margin-bottom: 35px; text-transform: uppercase; }
+        .calendar-days-wrapper { display: flex; justify-content: space-between; align-items: center; position: relative; padding: 25px 0; }
+        .calendar-days-wrapper::before, .calendar-days-wrapper::after { content: ''; position: absolute; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent 0%, #c9c1b9 20%, #c9c1b9 80%, transparent 100%); }
+        .calendar-days-wrapper::before { top: 0; } .calendar-days-wrapper::after { bottom: 0; }
+        .calendar-day { flex: 1; text-align: center; padding: 0 15px; position: relative; }
+        .calendar-day:not(:last-child) { border-right: 1px solid rgba(212, 205, 196, 0.6); }
+        .day-name { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: #777; margin-bottom: 12px; font-weight: 400; letter-spacing: 1px; }
+        .day-number { font-family: 'Playfair Display', serif; font-size: 34px; color: #2a2a2a; font-weight: 400; }
+        .calendar-day.highlighted .day-number { font-size: 44px; font-weight: 600; color: #1a1a1a; }
+        .hanging-pearl { position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; filter: drop-shadow(0 3px 4px rgba(0,0,0,0.2)); }
+        .pearl-chain { width: 2px; height: 28px; background: linear-gradient(180deg, #d4cdc4 0%, #b8b0a5 100%); margin-bottom: 3px; }
+        .pearl-drop { width: 18px; height: 18px; border-radius: 50%; background: radial-gradient(circle at 25% 25%, #ffffff 0%, #f0ebe5 25%, #d4cdc4 60%, #b8b0a5 100%); box-shadow: 0 2px 5px rgba(0,0,0,0.2), inset 0 -1px 2px rgba(0,0,0,0.15), inset 0 1px 2px rgba(255,255,255,0.9), 0 0 10px rgba(255,255,255,0.5); }
+
+        .photo-frame-section { padding: 50px 20px 70px; position: relative; z-index: 8; background: linear-gradient(180deg, #f5f0eb 0%, #ebe5dd 100%); }
+        .photo-frame-container { max-width: 400px; margin: 0 auto; perspective: 1000px; }
+        .pearl-frame { position: relative; background-color: #fff; background-image: repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(200,190,180,0.06) 1px, rgba(200,190,180,0.06) 2px), repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(200,190,180,0.06) 1px, rgba(200,190,180,0.06) 2px); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05), 0 15px 35px rgba(0,0,0,0.12), inset 0 0 0 1px rgba(255,255,255,0.8), inset 0 2px 4px rgba(0,0,0,0.05); transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s ease; cursor: pointer; padding: 20px; }
+        .pearl-frame:hover { transform: translateY(-8px) rotateX(2deg); box-shadow: 0 25px 50px rgba(0,0,0,0.18), inset 0 0 0 1px rgba(255,255,255,0.9); }
+        .pearl-border { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; border-radius: 8px; overflow: hidden; }
+        .pearl-row { position: absolute; left: 0; right: 0; display: flex; justify-content: space-around; align-items: center; padding: 0 10px; }
+        .pearl-row.top { top: 8px; } .pearl-row.bottom { bottom: 8px; }
+        .pearl-column { position: absolute; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: space-around; align-items: center; padding: 10px 0; }
+        .pearl-column.left { left: 8px; } .pearl-column.right { right: 8px; }
+        .frame-pearl { width: 14px; height: 14px; border-radius: 50%; background: radial-gradient(circle at 25% 25%, #ffffff 0%, #f0ebe5 25%, #d4cdc4 60%, #b8b0a5 100%); box-shadow: 0 2px 4px rgba(0,0,0,0.2), inset 0 -1px 2px rgba(0,0,0,0.15), inset 0 1px 2px rgba(255,255,255,0.9), 0 0 8px rgba(255,255,255,0.5); flex-shrink: 0; animation: pearlShimmer 3s ease-in-out infinite; }
+        .frame-pearl:nth-child(odd) { animation-delay: 0.5s; } .frame-pearl:nth-child(even) { animation-delay: 1s; }
+        .corner-pearl { position: absolute; width: 24px; height: 24px; border-radius: 50%; background: radial-gradient(circle at 25% 25%, #ffffff 0%, #f0ebe5 25%, #d4cdc4 60%, #b8b0a5 100%); box-shadow: 0 3px 8px rgba(0,0,0,0.25), inset 0 -1px 2px rgba(0,0,0,0.15), inset 0 1px 2px rgba(255,255,255,0.9), 0 0 12px rgba(255,255,255,0.5); z-index: 2; }
+        .corner-pearl.top-left { top: 2px; left: 2px; } .corner-pearl.top-right { top: 2px; right: 2px; } .corner-pearl.bottom-left { bottom: 2px; left: 2px; } .corner-pearl.bottom-right { bottom: 2px; right: 2px; }
+        .photo-wrapper { position: relative; overflow: hidden; border-radius: 4px; background: #e8e2db; z-index: 1; box-shadow: inset 0 3px 10px rgba(0,0,0,0.2); }
+        .photo-wrapper img { width: 100%; height: auto; display: block; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        .pearl-frame:hover .photo-wrapper img { transform: scale(1.04); }
+
+        .countdown-section { padding: 50px 20px 60px; position: relative; z-index: 8; background: linear-gradient(180deg, #ebe5dd 0%, #d4cdc4 60%, #c9c1b9 100%); }
+        .countdown-container { max-width: 400px; margin: 0 auto; text-align: center; }
+        .countdown-title { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; color: #2a2a2a; letter-spacing: 4px; margin-bottom: 10px; }
+        .countdown-subtitle { font-family: 'Great Vibes', cursive; font-size: 34px; color: #8b7355; margin-bottom: 30px; }
+        .countdown-timer { display: flex; justify-content: space-around; align-items: center; gap: 8px; margin-bottom: 20px; }
+        .countdown-item { flex: 1; background-color: #faf9f7; background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(184, 176, 165, 0.08) 2px, rgba(184, 176, 165, 0.08) 3px), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(184, 176, 165, 0.08) 2px, rgba(184, 176, 165, 0.08) 3px); padding: 15px 8px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05), 0 8px 16px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.9), inset 0 -2px 4px rgba(0,0,0,0.03); position: relative; transition: transform 0.3s ease; border: 1px solid rgba(184, 176, 165, 0.2); }
+        .countdown-item:hover { transform: translateY(-4px); }
+        .countdown-number { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: #1a1a1a; line-height: 1; margin-bottom: 6px; }
+        .countdown-label { font-family: 'Cormorant Garamond', serif; font-size: 11px; color: #777; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; }
+        .countdown-separator { font-family: 'Playfair Display', serif; font-size: 24px; color: #b8b0a5; font-weight: 300; animation: pulse 2s ease-in-out infinite; }
+        .countdown-date { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: #555; letter-spacing: 4px; margin-top: 15px; font-weight: 600; }
+        .countdown-pearls { display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 25px; }
+        .countdown-pearl { width: 10px; height: 10px; border-radius: 50%; background: radial-gradient(circle at 25% 25%, #ffffff 0%, #f0ebe5 25%, #d4cdc4 60%, #b8b0a5 100%); box-shadow: 0 2px 4px rgba(0,0,0,0.2), inset 0 -1px 2px rgba(0,0,0,0.15), inset 0 1px 2px rgba(255,255,255,0.9), 0 0 8px rgba(255,255,255,0.5); animation: pearlShimmer 3s ease-in-out infinite; }
+        .countdown-pearl:nth-child(odd) { animation-delay: 0.5s; } .countdown-pearl:nth-child(even) { animation-delay: 1s; }
+
+        .program-section { padding: 60px 15px 30px; background: linear-gradient(180deg, #c9c1b9 0%, #d9d0c5 60%, #e8e0d9 100%); position: relative; overflow: hidden; z-index: 8; }
+        .program-title { text-align: center; margin-bottom: 0; }
+        .program-main-title { font-family: 'Playfair Display', serif; font-size: 36px; color: #2a2a2a; letter-spacing: 8px; text-transform: uppercase; }
+        .program-subtitle { font-family: 'Great Vibes', cursive; font-size: 32px; color: #555; margin-top: 5px; }
+        .pearl-snake-container { position: relative; max-width: 380px; margin: 0 auto; height: 620px; }
+        .snake-svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+        .snake-path { fill: none; stroke: transparent; }
+        .path-pearl { position: absolute; border-radius: 50%; background: radial-gradient(circle at 25% 25%, #ffffff 0%, #f0ebe5 25%, #d4cdc4 60%, #b8b0a5 100%); box-shadow: 0 2px 5px rgba(0,0,0,0.25), inset 0 -1px 2px rgba(0,0,0,0.1), inset 0 1px 2px rgba(255,255,255,0.8), 0 0 8px rgba(255,255,255,0.5); transform: translate(-50%, -50%); z-index: 2; animation: shimmer 3s ease-in-out infinite; }
+        .event-pearl { position: absolute; width: 32px; height: 32px; border-radius: 50%; background: radial-gradient(circle at 25% 25%, #ffffff 0%, #f0ebe5 25%, #d4cdc4 60%, #b8b0a5 100%); box-shadow: 0 4px 12px rgba(0,0,0,0.35), inset 0 -2px 3px rgba(0,0,0,0.15), inset 0 2px 3px rgba(255,255,255,0.9), 0 0 15px rgba(255,255,255,0.6); transform: translate(-50%, -50%); z-index: 3; animation: shimmer 2.5s ease-in-out infinite; }
+        .timeline-label { position: absolute; z-index: 4; transform: translate(-50%, -50%); text-align: center; pointer-events: none; }
+        .label-time { font-family: 'Playfair Display', serif; font-size: 28px; color: #2a2a2a; font-weight: 600; line-height: 1; margin-bottom: 4px; }
+        .label-event { font-family: 'Cormorant Garamond', serif; font-size: 14px; color: #555; letter-spacing: 1.5px; text-transform: uppercase; white-space: nowrap; }
+        .final-brooch { position: absolute; bottom: 50px; left: 50%; transform: translateX(-50%); width: 60px; height: 60px; z-index: 5; }
+        .brooch-pearl { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 30px; height: 30px; border-radius: 50%; background: radial-gradient(circle at 25% 25%, #ffffff 0%, #f0ebe5 25%, #d4cdc4 60%, #b8b0a5 100%); box-shadow: 0 4px 12px rgba(0,0,0,0.35), inset 0 -2px 4px rgba(0,0,0,0.2), inset 0 2px 4px rgba(255,255,255,0.9), 0 0 15px rgba(255,255,255,0.6); animation: shimmer 2s ease-in-out infinite; }
+        .brooch-petal { position: absolute; width: 18px; height: 26px; background: radial-gradient(ellipse at center, #f5f0eb 0%, #d4cdc4 100%); border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; box-shadow: 0 2px 6px rgba(0,0,0,0.25); }
+        .brooch-petal:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); }
+        .brooch-petal:nth-child(2) { bottom: 0; left: 50%; transform: translateX(-50%) rotate(180deg); }
+        .brooch-petal:nth-child(3) { left: 0; top: 50%; transform: translateY(-50%) rotate(-90deg); }
+        .brooch-petal:nth-child(4) { right: 0; top: 50%; transform: translateY(-50%) rotate(90deg); }
+
+        .venue-section { padding: 30px 20px 60px; background: linear-gradient(180deg, #e8e0d9 0%, #f5f0eb 40%, #ebe5dd 100%); position: relative; overflow: hidden; z-index: 8; }
+        .venue-title { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 400; letter-spacing: 8px; color: #2c2c2c; margin-bottom: 10px; text-align: center; text-shadow: 0 1px 2px rgba(255,255,255,0.8); position: relative; z-index: 1; }
+        .venue-title::before, .venue-title::after { content: '✦'; position: absolute; top: 50%; transform: translateY(-50%); color: #8b7355; font-size: 24px; opacity: 0.8; }
+        .venue-title::before { left: -40px; } .venue-title::after { right: -40px; }
+        .venue-subtitle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 28px; color: #6b6b6b; margin-bottom: 50px; text-align: center; text-shadow: 1px 1px 2px rgba(255,255,255,0.8), 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 1; }
+        .venue-container { position: relative; width: 100%; max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; z-index: 1; animation: fadeInUp 1.2s ease-out; }
+        .ornate-frame { position: relative; width: 100%; padding: 50px 30px; background: linear-gradient(145deg, #d4c4b8 0%, #b8a99a 30%, #a89888 60%, #9a8a7a 100%); border-radius: 25px; box-shadow: 0 30px 80px rgba(0,0,0,0.4), 0 15px 40px rgba(0,0,0,0.3), 0 5px 15px rgba(0,0,0,0.2), inset 0 2px 10px rgba(255,255,255,0.4), inset 0 -2px 10px rgba(0,0,0,0.3), inset 2px 0 10px rgba(255,255,255,0.2), inset -2px 0 10px rgba(0,0,0,0.2), 0 0 0 1px rgba(255,255,255,0.1); transition: transform 0.4s ease, box-shadow 0.4s ease; }
+        .ornate-frame:hover { transform: translateY(-5px); box-shadow: 0 35px 90px rgba(0,0,0,0.45), 0 20px 50px rgba(0,0,0,0.35), 0 10px 20px rgba(0,0,0,0.25), inset 0 2px 10px rgba(255,255,255,0.4), inset 0 -2px 10px rgba(0,0,0,0.3); }
+        .ornate-frame::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at top, rgba(255,255,255,0.3) 0%, transparent 50%), radial-gradient(ellipse at bottom, rgba(0,0,0,0.2) 0%, transparent 50%); border-radius: 25px; pointer-events: none; }
+        .ornate-frame::after { content: ''; position: absolute; top: 20px; left: 20px; right: 20px; bottom: 20px; border: 2px solid rgba(255,255,255,0.3); border-radius: 15px; box-shadow: inset 0 0 20px rgba(0,0,0,0.2), 0 0 20px rgba(255,255,255,0.1); pointer-events: none; }
+        .frame-decoration { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); width: 100px; height: 35px; background: linear-gradient(145deg, #e0d4c8, #b8a99a, #8b7355); border-radius: 50% 50% 0 0; box-shadow: 0 5px 15px rgba(0,0,0,0.3), inset 0 2px 5px rgba(255,255,255,0.4), inset 0 -2px 5px rgba(0,0,0,0.2); z-index: 2; }
+        .frame-decoration::before { content: ''; position: absolute; top: 5px; left: 50%; transform: translateX(-50%); width: 60%; height: 40%; background: radial-gradient(ellipse, rgba(255,255,255,0.5), transparent); border-radius: 50%; }
+        .pearl-arc { position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%); width: 92%; height: 70px; z-index: 10; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.45)); }
+        .pearl-thread { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+        .pearl-thread svg { width: 100%; height: 100%; overflow: visible; }
+        .venue-pearl { position: absolute; width: 22px; height: 22px; background: radial-gradient(circle at 25% 25%, #ffffff 0%, #f5f0eb 25%, #e8e0d9 55%, #c9c0b5 100%); border-radius: 50%; box-shadow: 0 5px 10px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.25), inset -2px -2px 5px rgba(0,0,0,0.2), inset 2px 2px 4px rgba(255,255,255,0.85), 0 0 12px rgba(255,255,255,0.5); transform: translate(-50%, -50%); transition: transform 0.3s ease; }
+        .venue-pearl:hover { transform: translate(-50%, -50%) scale(1.15); }
+        .venue-pearl.center { width: 26px; height: 26px; box-shadow: 0 7px 14px rgba(0,0,0,0.45), 0 3px 6px rgba(0,0,0,0.3), inset -3px -3px 6px rgba(0,0,0,0.2), inset 2px 2px 5px rgba(255,255,255,0.9), 0 0 18px rgba(255,255,255,0.6); }
+        .side-pearls { position: absolute; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 20px; z-index: 5; }
+        .side-pearls.left { left: -10px; } .side-pearls.right { right: -10px; }
+        .side-pearl { width: 20px; height: 20px; background: radial-gradient(circle at 25% 25%, #ffffff 0%, #f5f0eb 25%, #e8e0d9 55%, #d4c4b8 100%); border-radius: 50%; box-shadow: 0 5px 10px rgba(0,0,0,0.35), 0 2px 5px rgba(0,0,0,0.25), inset -2px -2px 4px rgba(0,0,0,0.15), inset 2px 2px 4px rgba(255,255,255,0.7), 0 0 10px rgba(255,255,255,0.5); position: relative; transition: transform 0.3s ease; }
+        .side-pearl:hover { transform: scale(1.15); }
+        .venue-card { background: linear-gradient(145deg, #faf8f5 0%, #f5f0eb 50%, #ede5dd 100%); padding: 40px 30px; border-radius: 8px; box-shadow: 0 20px 50px rgba(0,0,0,0.25), 0 10px 25px rgba(0,0,0,0.15), 0 5px 10px rgba(0,0,0,0.1), inset 0 1px 3px rgba(255,255,255,0.8), inset 0 -1px 3px rgba(0,0,0,0.05), 0 0 0 1px rgba(255,255,255,0.5); text-align: center; position: relative; z-index: 5; }
+        .venue-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at top, rgba(255,255,255,0.6) 0%, transparent 60%); border-radius: 8px; pointer-events: none; }
+        .venue-info-section { margin-bottom: 40px; position: relative; }
+        .venue-info-section:last-child { margin-bottom: 0; }
+        .info-label { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 500; letter-spacing: 3px; color: #4a4a4a; margin-bottom: 15px; text-transform: uppercase; text-shadow: 0 1px 2px rgba(255,255,255,0.8), 0 2px 4px rgba(0,0,0,0.1); }
+        .venue-name { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; color: #2c2c2c; margin-bottom: 12px; letter-spacing: 1px; text-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 1px 2px rgba(255,255,255,0.5); }
+        .venue-address { font-size: 18px; color: #6b6b6b; line-height: 1.7; margin-bottom: 18px; text-shadow: 0 1px 2px rgba(255,255,255,0.6); }
+        .map-cutout { position: relative; width: 100%; max-width: 320px; margin: 20px auto; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 15px 35px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.2), 0 3px 8px rgba(0,0,0,0.15), inset 0 0 0 1px rgba(255,255,255,0.9), inset 0 0 0 2px rgba(180,170,155,0.3); transition: transform 0.4s ease, box-shadow 0.4s ease; }
+        .map-cutout::before { content: ''; position: absolute; top: -4px; left: -4px; right: -4px; bottom: -4px; background: linear-gradient(145deg, #e8e0d5, #c9c0b5, #a89888); border-radius: 13px; z-index: -1; box-shadow: 0 10px 25px rgba(0,0,0,0.25), inset 0 1px 2px rgba(255,255,255,0.5); }
+        .map-cutout::after { content: ''; position: absolute; bottom: 0; right: 0; width: 25px; height: 25px; background: linear-gradient(135deg, transparent 50%, rgba(0,0,0,0.08) 50%); border-radius: 0 0 10px 0; pointer-events: none; z-index: 3; }
+        .map-cutout:hover { transform: translateY(-3px) rotate(-0.5deg); box-shadow: 0 20px 45px rgba(0,0,0,0.35), 0 12px 25px rgba(0,0,0,0.25), 0 5px 12px rgba(0,0,0,0.15), inset 0 0 0 1px rgba(255,255,255,0.9), inset 0 0 0 2px rgba(180,170,155,0.3); }
+        .map-cutout iframe { display: block; width: 100%; height: 200px; border: none; filter: sepia(15%) saturate(85%) brightness(98%); }
+        .map-pin { position: absolute; top: 15px; left: 15px; width: 32px; height: 32px; background: radial-gradient(circle at 40% 40%, #ff6b6b, #c0392b); border-radius: 50% 50% 50% 0; transform: rotate(-45deg); box-shadow: 0 4px 10px rgba(192,57,43,0.5), 0 2px 4px rgba(0,0,0,0.3), inset -2px -2px 4px rgba(0,0,0,0.2), inset 2px 2px 4px rgba(255,255,255,0.4); z-index: 2; }
+        .map-pin::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 12px; height: 12px; background: radial-gradient(circle, #fff, #f5f0eb); border-radius: 50%; box-shadow: inset 0 1px 2px rgba(0,0,0,0.2); }
+        .map-caption { position: absolute; bottom: 8px; right: 12px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 11px; color: rgba(107,107,107,0.8); background: rgba(250,248,245,0.85); padding: 2px 8px; border-radius: 3px; backdrop-filter: blur(4px); box-shadow: 0 1px 3px rgba(0,0,0,0.1); z-index: 2; }
+        .view-map { display: inline-block; font-size: 16px; color: #8b7355; text-decoration: none; border-bottom: 1px solid #8b7355; padding-bottom: 2px; transition: all 0.3s ease; font-style: italic; text-shadow: 0 1px 2px rgba(255,255,255,0.5); position: relative; margin-top: 10px; }
+        .view-map::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 1px; background: linear-gradient(to right, transparent, #8b7355, transparent); opacity: 0.5; }
+        .view-map:hover { color: #6b5344; border-bottom-color: #6b5344; text-shadow: 0 2px 4px rgba(139,115,85,0.3); }
+        .venue-divider { width: 80px; height: 2px; background: linear-gradient(to right, transparent 0%, #c9c0b5 20%, #a89888 50%, #c9c0b5 80%, transparent 100%); margin: 35px auto; box-shadow: 0 2px 4px rgba(0,0,0,0.15), 0 0 10px rgba(201,192,181,0.3); position: relative; }
+        .venue-divider::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 6px; height: 6px; background: radial-gradient(circle, #a89888, #c9c0b5); border-radius: 50%; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .venue-highlight { position: absolute; top: 10%; left: 10%; width: 30%; height: 20%; background: radial-gradient(ellipse, rgba(255,255,255,0.3), transparent); border-radius: 50%; pointer-events: none; filter: blur(20px); }
+
+        .dresscode-section { padding: 0; position: relative; overflow: hidden; z-index: 8; min-height: 700px; }
+        .dresscode-background-photo { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+        .dresscode-background-photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.05) brightness(0.85); }
+        .dresscode-background-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(58, 48, 40, 0.6) 0%, rgba(91, 78, 68, 0.5) 100%); z-index: 1; }
+        .dresscode-content { position: relative; z-index: 2; padding: 0 40px 60px; display: flex; flex-direction: row; align-items: flex-end; justify-content: space-between; min-height: 700px; }
+        .dresscode-vertical-title { font-family: 'Playfair Display', serif; font-size: 72px; font-weight: 700; letter-spacing: 8px; color: #f5f0eb; writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); line-height: 1; text-shadow: 0 4px 8px rgba(0,0,0,0.4); margin-bottom: 0; flex-shrink: 0; }
+        .dresscode-palette-wrapper { background: rgba(245, 240, 235, 0.95); border-radius: 12px; padding: 25px 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); max-width: 280px; backdrop-filter: blur(10px); margin-left: auto; }
+        .dresscode-subtitle-new { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-style: italic; color: #6b5a4a; text-align: center; margin-bottom: 20px; letter-spacing: 0.5px; line-height: 1.5; }
+        
+        .details-section { padding: 60px 20px 30px; background: linear-gradient(180deg, #ebe5dd 0%, #f5f0eb 50%, #ebe5dd 100%); position: relative; overflow: hidden; z-index: 8; }
+        .details-title { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 400; letter-spacing: 8px; color: #2c2c2c; text-align: center; margin-bottom: 40px; text-shadow: 0 1px 2px rgba(255,255,255,0.8); position: relative; }
+        .details-title::before, .details-title::after { content: '✦'; position: absolute; top: 50%; transform: translateY(-50%); color: #8b7355; font-size: 24px; opacity: 0.8; }
+        .details-title::before { left: -40px; } .details-title::after { right: -40px; }
+        
+        .questionnaire-section { padding: 30px 20px 40px; background: linear-gradient(180deg, #ebe5dd 0%, #f5f0eb 50%, #ebe5dd 100%); position: relative; overflow: hidden; z-index: 8; }
+        .questionnaire-title { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 400; letter-spacing: 8px; color: #2c2c2c; text-align: center; margin-bottom: 40px; text-shadow: 0 1px 2px rgba(255,255,255,0.8); position: relative; }
+        .questionnaire-title::before, .questionnaire-title::after { content: '✦'; position: absolute; top: 50%; transform: translateY(-50%); color: #8b7355; font-size: 24px; opacity: 0.8; }
+        .questionnaire-title::before { left: -40px; } .questionnaire-title::after { right: -40px; }
+
+        .envelope-card { position: relative; background: linear-gradient(135deg, #f5f0eb 0%, #ede5dd 100%); border-radius: 12px; margin-bottom: 30px; box-shadow: 0 20px 50px rgba(0,0,0,0.15), 0 10px 25px rgba(0,0,0,0.1), 0 5px 10px rgba(0,0,0,0.05); transition: all 0.5s ease; overflow: hidden; }
+        .envelope-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; box-shadow: inset 0 10px 30px rgba(0,0,0,0.1); pointer-events: none; z-index: 1; border-radius: 12px; }
+        .envelope-card:hover { transform: translateY(-8px); box-shadow: 0 30px 70px rgba(0,0,0,0.2), 0 15px 35px rgba(0,0,0,0.15), 0 8px 15px rgba(0,0,0,0.1); }
+        .envelope-flap { position: relative; width: 100%; height: 80px; background: linear-gradient(180deg, #faf8f5 0%, #f5f0eb 100%); clip-path: polygon(0 0, 50% 100%, 100% 0); box-shadow: 0 5px 15px rgba(0,0,0,0.1); z-index: 3; }
+        .envelope-flap::after { content: ''; position: absolute; bottom: -10px; left: 10%; right: 10%; height: 20px; background: linear-gradient(to bottom, rgba(0,0,0,0.15), transparent); filter: blur(5px); pointer-events: none; }
+        .pearl-clasp { position: absolute; top: 35px; left: 50%; transform: translateX(-50%); width: 50px; height: 30px; z-index: 4; filter: drop-shadow(0 3px 6px rgba(0,0,0,0.25)); }
+        .corner-pearl-detail { position: absolute; width: 12px; height: 12px; background: radial-gradient(circle at 30% 30%, #ffffff, #f0e8e0, #d4c4b8); border-radius: 50%; box-shadow: 0 3px 8px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.15), inset -1px -1px 2px rgba(0,0,0,0.1), inset 1px 1px 2px rgba(255,255,255,0.9), 0 0 8px rgba(255,255,255,0.3); z-index: 5; }
+        .corner-pearl-detail.top-left { top: 15px; left: 15px; } .corner-pearl-detail.top-right { top: 15px; right: 15px; } .corner-pearl-detail.bottom-left { bottom: 15px; left: 15px; } .corner-pearl-detail.bottom-right { bottom: 15px; right: 15px; }
+        .letter-content { position: relative; background: linear-gradient(135deg, #ffffff 0%, #fefcf9 100%); margin: 25px 30px 35px; padding: 40px 30px; border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.15), 0 8px 20px rgba(0,0,0,0.1), 0 4px 10px rgba(0,0,0,0.08), 0 2px 5px rgba(0,0,0,0.05), inset 0 2px 5px rgba(255,255,255,1), inset 0 -1px 3px rgba(0,0,0,0.02); text-align: center; z-index: 2; }
+        .letter-content::before { content: ''; position: absolute; top: 5px; left: 5px; right: 5px; bottom: -8px; background: rgba(0,0,0,0.08); border-radius: 8px; filter: blur(10px); z-index: -1; }
+        .form-subtitle { font-size: 18px; line-height: 1.7; color: #6b5a4a; margin-bottom: 30px; font-style: italic; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .form-group { margin-bottom: 25px; text-align: left; }
+        .form-label { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 500; color: #5a4a3a; margin-bottom: 12px; display: block; letter-spacing: 0.5px; }
+        .form-input { width: 100%; padding: 12px 5px; font-family: 'Cormorant Garamond', serif; font-size: 18px; color: #5a4a3a; background: transparent; border: none; border-bottom: 1.5px solid #c9c0b5; outline: none; transition: all 0.3s ease; }
+        .form-input::placeholder { color: #b8a99a; font-style: italic; }
+        .form-input:focus { border-bottom-color: #8b7355; border-bottom-width: 2px; }
+        .form-input:focus + .input-highlight { width: 100%; }
+        .input-highlight { display: block; height: 2px; background: linear-gradient(to right, #8b7355, #c9a87c); width: 0; transition: width 0.4s ease; margin-top: -2px; }
+        .radio-group { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
+        .radio-option { display: flex; align-items: center; cursor: pointer; padding: 10px 15px; border-radius: 8px; transition: all 0.3s ease; background: rgba(245,240,235,0.3); }
+        .radio-option:hover { background: rgba(245,240,235,0.8); transform: translateX(5px); }
+        .radio-option input[type="radio"] { display: none; }
+        .radio-custom { width: 22px; height: 22px; border: 2px solid #c9c0b5; border-radius: 50%; margin-right: 15px; position: relative; transition: all 0.3s ease; flex-shrink: 0; background: #ffffff; }
+        .radio-custom::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); width: 10px; height: 10px; background: radial-gradient(circle, #8b7355, #6b5344); border-radius: 50%; transition: transform 0.3s ease; }
+        .radio-option input[type="radio"]:checked + .radio-custom { border-color: #8b7355; box-shadow: 0 0 0 3px rgba(139,115,85,0.15); }
+        .radio-option input[type="radio"]:checked + .radio-custom::after { transform: translate(-50%, -50%) scale(1); }
+        .radio-label { font-size: 18px; color: #5a4a3a; line-height: 1.5; }
+        .submit-btn { display: inline-block; margin-top: 20px; padding: 15px 50px; font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 500; letter-spacing: 3px; color: #5a4a3a; background: linear-gradient(135deg, #faf8f5 0%, #f5f0eb 100%); border: 2px solid #c9c0b5; border-radius: 50px; cursor: pointer; transition: all 0.4s ease; text-transform: uppercase; box-shadow: 0 5px 15px rgba(0,0,0,0.08), inset 0 2px 5px rgba(255,255,255,0.8); }
+        .submit-btn:hover { background: linear-gradient(135deg, #8b7355 0%, #6b5344 100%); color: #ffffff; border-color: #8b7355; transform: translateY(-3px); box-shadow: 0 10px 25px rgba(139,115,85,0.3), inset 0 2px 5px rgba(255,255,255,0.2); letter-spacing: 4px; }
+        .submit-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none !important; }
+
+        .palette-container { position: relative; z-index: 1; margin: 15px 0 0; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .palette-row { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+        .color-circle { position: relative; width: 38px; height: 38px; border-radius: 50%; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 3px 6px rgba(0,0,0,0.25), inset 0 1px 3px rgba(255,255,255,0.15); }
+        .color-circle::before { content: ''; position: absolute; top: -3px; left: -3px; right: -3px; bottom: -3px; border-radius: 50%; background: inherit; filter: blur(6px); opacity: 0.3; z-index: -1; }
+        .color-circle::after { content: none; }
+        .color-circle:hover { transform: scale(1.12); }
+        .color-1 { background: #dcc9b3; } .color-2 { background: #c9b49a; } .color-3 { background: #b5c2ad; } .color-4 { background: #7a8a6d; } .color-5 { background: #a89888; } .color-6 { background: #6b5a4a; } .color-7 { background: #3b261b; }
+        .color-circle .tooltip { position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); font-family: 'Cormorant Garamond', serif; font-size: 11px; font-style: italic; color: #5a4a3a; white-space: nowrap; opacity: 0; transition: opacity 0.3s ease; text-shadow: 0 1px 2px rgba(255,255,255,0.8); pointer-events: none; z-index: 10; }
+        .color-circle:hover .tooltip { opacity: 1; }
+
+        .card-illustration { width: 70px; height: 70px; margin: 0 auto 15px; position: relative; z-index: 5; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.12)); transition: transform 0.4s ease; }
+        .card-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 500; color: #2c2c2c; margin-bottom: 10px; letter-spacing: 2px; }
+        .divider-detail { width: 60px; height: 1px; background: linear-gradient(90deg, transparent 0%, #b8b0a5 50%, transparent 100%); margin: 15px auto; }
+        .card-text-detail { font-family: 'Cormorant Garamond', serif; font-size: 18px; line-height: 1.6; color: #5a4a3a; font-style: italic; }
+
+        .contacts-final-section { padding: 40px 20px 80px; background: linear-gradient(180deg, #ebe5dd 0%, #f5f0eb 50%, #e8e0d9 100%); position: relative; overflow: hidden; z-index: 8; }
+        .contacts-container { position: relative; width: 100%; max-width: 750px; margin: 0 auto; z-index: 1; }
+        .contacts-main-title { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 400; letter-spacing: 8px; color: #2c2c2c; text-align: center; margin-bottom: 40px; text-shadow: 0 1px 2px rgba(255,255,255,0.8); position: relative; }
+        .contacts-main-title::before, .contacts-main-title::after { content: '✦'; position: absolute; top: 50%; transform: translateY(-50%); color: #8b7355; font-size: 24px; opacity: 0.8; }
+        .contacts-main-title::before { left: -40px; } .contacts-main-title::after { right: -40px; }
+        .contacts-subtitle-text { font-size: 18px; line-height: 1.7; color: #6b5a4a; font-style: italic; max-width: 500px; margin: 0 auto 25px; text-align: center; }
+        .decorative-line-contacts { width: 100%; height: 1px; background: linear-gradient(to right, transparent, rgba(139,115,85,0.3) 20%, rgba(139,115,85,0.3) 80%, transparent); margin: 25px 0; }
+        .contacts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .contact-item-card { background: linear-gradient(135deg, #ffffff 0%, #faf8f5 100%); border-radius: 15px; padding: 30px 25px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.05), inset 0 2px 5px rgba(255,255,255,1); transition: all 0.4s ease; position: relative; overflow: hidden; }
+        .contact-item-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(to right, #d4c4b8, #c9a87c, #d4c4b8); }
+        .contact-item-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.1), inset 0 2px 5px rgba(255,255,255,1); }
+        .contact-name { font-family: 'Great Vibes', cursive; font-size: 42px; color: #5a4a3a; margin-bottom: 15px; text-shadow: 0 1px 2px rgba(255,255,255,0.8); }
+        .contact-phone-link { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #6b5a4a; text-decoration: none; display: inline-block; padding: 8px 20px; border-radius: 25px; background: rgba(212,196,184,0.2); transition: all 0.3s ease; border: 1.5px solid transparent; }
+        .contact-phone-link:hover { background: rgba(139,115,85,0.15); border-color: #c9a87c; color: #8b7355; transform: scale(1.05); }
+        .contacts-photo-section { position: relative; margin: 30px 0; }
+        .contacts-photo-container { position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.2), 0 15px 30px rgba(0,0,0,0.15); max-width: 600px; margin: 0 auto; }
+        .couple-photo { width: 100%; height: 350px; object-fit: cover; display: block; transition: transform 0.8s ease; }
+        .contacts-photo-container:hover .couple-photo { transform: scale(1.05); }
+        .photo-overlay-contacts { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, transparent 50%, rgba(139,115,85,0.3) 100%); pointer-events: none; }
+        .photo-border-contacts { position: absolute; top: 15px; left: 15px; right: 15px; bottom: 15px; border: 2px solid rgba(255,255,255,0.5); border-radius: 10px; pointer-events: none; box-shadow: 0 0 20px rgba(255,255,255,0.3), inset 0 0 20px rgba(255,255,255,0.1); }
+        .photo-pearl-contact { position: absolute; width: 12px; height: 12px; background: radial-gradient(circle at 30% 30%, #ffffff, #f0e8e0, #d4c4b8); border-radius: 50%; box-shadow: 0 3px 8px rgba(0,0,0,0.3), inset -1px -1px 2px rgba(0,0,0,0.15), inset 1px 1px 2px rgba(255,255,255,0.9); z-index: 3; }
+        .photo-pearl-contact.top-left { top: 20px; left: 20px; } .photo-pearl-contact.top-right { top: 20px; right: 20px; } .photo-pearl-contact.bottom-left { bottom: 20px; left: 20px; } .photo-pearl-contact.bottom-right { bottom: 20px; right: 20px; }
+        .final-message { font-family: 'Great Vibes', cursive; font-size: 36px; color: #8b7355; text-align: center; margin-top: 20px; text-shadow: 1px 1px 2px rgba(255,255,255,0.8), 0 2px 4px rgba(0,0,0,0.08); }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes pearlShimmer { 0%, 100% { opacity: 0.9; filter: brightness(1); } 50% { opacity: 1; filter: brightness(1.15); } }
+        @keyframes pearlDrop { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(4px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        @keyframes shimmer { 0%, 100% { opacity: 0.9; filter: brightness(1); } 50% { opacity: 1; filter: brightness(1.1); } }
+
+        .names { animation: fadeInUp 1.2s ease-out; } .subtitle { animation: fadeInUp 1.2s ease-out 0.3s both; } .photo-container { animation: fadeIn 1.5s ease-out 0.6s both; } .quote-section { animation: fadeInUp 1.5s ease-out 0.8s both; } .invitation-section { animation: fadeInUp 1.5s ease-out 1s both; } .envelope { animation: fadeInUp 1.5s ease-out 1.2s both; } .calendar-section { animation: fadeInUp 1.5s ease-out 1.4s both; } .photo-frame-section { animation: fadeInUp 1.5s ease-out 1.6s both; } .countdown-section { animation: fadeInUp 1.5s ease-out 1.8s both; } .program-section { animation: fadeInUp 1.5s ease-out 2s both; } .venue-section { animation: fadeInUp 1.5s ease-out 2.2s both; } .dresscode-section { animation: fadeInUp 1.5s ease-out 2.4s both; } .details-section { animation: fadeInUp 1.5s ease-out 2.6s both; } .questionnaire-section { animation: fadeInUp 1.5s ease-out 2.8s both; } .contacts-final-section { animation: fadeInUp 1.5s ease-out 3s both; } .hanging-pearl { animation: pearlDrop 3s ease-in-out infinite; } .pearl { animation: pearlShimmer 3s ease-in-out infinite; } .contact-item-card:nth-child(1) { animation: fadeInUp 1.4s ease-out 0.2s both; } .contact-item-card:nth-child(2) { animation: fadeInUp 1.4s ease-out 0.4s both; } .envelope-card:nth-child(2) { animation: fadeInUp 1.4s ease-out 0.2s both; } .envelope-card:nth-child(3) { animation: fadeInUp 1.4s ease-out 0.4s both; } .envelope-card:nth-child(4) { animation: fadeInUp 1.4s ease-out 0.6s both; }
+
+        @media (max-width: 768px) {
+            .intro-title { font-size: 32px; } .intro-envelope { width: 240px; height: 150px; } .envelope-flap-left { border-width: 75px 0 75px 120px; } .envelope-flap-right { border-width: 75px 120px 75px 0; } .envelope-flap-bottom { border-width: 0 120px 85px 120px; } .envelope-flap-top { border-width: 85px 120px 0 120px; }
+            .venue-title, .details-title, .questionnaire-title, .contacts-main-title { font-size: 32px; letter-spacing: 5px; }
+            .venue-title::before, .venue-title::after, .details-title::before, .details-title::after, .questionnaire-title::before, .questionnaire-title::after, .contacts-main-title::before, .contacts-main-title::after { display: none; }
+            .venue-subtitle { font-size: 28px; } .ornate-frame, .dresscode-card { padding: 35px 25px; } .venue-card { padding: 40px 25px; } .venue-name { font-size: 24px; } .venue-address { font-size: 16px; } .side-pearls.left { left: 0; } .side-pearls.right { right: 0; } .venue-pearl { width: 18px; height: 18px; } .venue-pearl.center { width: 22px; height: 22px; } .map-cutout iframe { height: 180px; } .card-corner-pearl, .corner-pearl-detail { width: 10px; height: 10px; } .monogram { font-size: 30px; } .contact-name { font-size: 36px; } .contact-phone-link { font-size: 20px; } .couple-photo { height: 280px; } .final-message { font-size: 30px; } .contacts-grid { grid-template-columns: 1fr; } .form-subtitle { font-size: 16px; } .form-label { font-size: 20px; } .form-input { font-size: 17px; } .radio-label { font-size: 17px; } .submit-btn { padding: 12px 40px; font-size: 16px; } .card-illustration { width: 60px; height: 60px; } .color-circle { width: 40px; height: 40px; }
+            .dresscode-content { padding: 0 20px 40px; flex-direction: row; align-items: flex-end; min-height: 550px; } .dresscode-vertical-title { font-size: 42px; letter-spacing: 4px; margin-bottom: 0; } .dresscode-palette-wrapper { max-width: 100%; margin-left: auto; padding: 20px 15px; }
+        }
+        @media (max-width: 480px) {
+            .intro-title { font-size: 26px; } .venue-title, .details-title, .questionnaire-title, .contacts-main-title { font-size: 26px; letter-spacing: 3px; } .letter-content { padding: 30px 20px; } .contact-item-card { padding: 25px 20px; } .contact-name { font-size: 32px; } .contact-phone-link { font-size: 18px; padding: 6px 15px; } .couple-photo { height: 220px; } .final-message { font-size: 26px; } .form-label { font-size: 18px; } .form-input { font-size: 16px; } .radio-label { font-size: 16px; } .submit-btn { padding: 12px 30px; font-size: 15px; letter-spacing: 2px; } .card-illustration { width: 50px; height: 50px; } .color-circle { width: 36px; height: 36px; } .palette-row { gap: 10px; }
+            .dresscode-content { padding: 0 15px 30px; min-height: 500px; flex-direction: row; align-items: flex-end; } .dresscode-vertical-title { font-size: 34px; letter-spacing: 3px; margin-bottom: 0; } .dresscode-palette-wrapper { padding: 15px 10px; margin-left: auto; } .dresscode-subtitle-new { font-size: 12px; margin-bottom: 12px; } .color-circle { width: 30px; height: 30px; } .palette-row { gap: 8px; }
+        }
+        @media (max-width: 360px) {
+            .names { font-size: 46px; letter-spacing: 2px; } .subtitle { font-size: 30px; } .logo { font-size: 30px; } .quote-text { font-size: 10px; letter-spacing: 0.4px; } .invitation-title { font-size: 26px; } .card-text-main { font-size: 17px; } .calendar-month { font-size: 30px; letter-spacing: 5px; } .day-number { font-size: 30px; } .calendar-day.highlighted .day-number { font-size: 38px; } .frame-pearl { width: 12px; height: 12px; } .corner-pearl { width: 20px; height: 20px; } .countdown-number { font-size: 32px; } .countdown-label { font-size: 11px; } .countdown-title { font-size: 24px; } .countdown-subtitle { font-size: 28px; } .program-main-title { font-size: 28px; letter-spacing: 5px; } .program-subtitle { font-size: 26px; } .label-time { font-size: 24px; } .label-event { font-size: 12px; } .event-pearl { width: 26px; height: 26px; }
+            .dresscode-vertical-title { font-size: 28px; letter-spacing: 2px; } .dresscode-content { padding: 0 10px 25px; min-height: 460px; } .dresscode-subtitle-new { font-size: 11px; } .color-circle { width: 26px; height: 26px; } .palette-row { gap: 6px; } .dresscode-palette-wrapper { padding: 12px 8px; }
+        }
+        @media (min-width: 768px) { .page-wrapper { max-width: 100%; min-height: 100vh; } .names { font-size: 80px; } .subtitle { font-size: 48px; } .quote-text { font-size: 13px; letter-spacing: 0.8px; } .pearl-decoration { width: 120px; } }
+
+        .menu-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(30, 25, 20, 0.6); backdrop-filter: blur(4px); z-index: 100; opacity: 0; visibility: hidden; transition: all 0.4s ease; }
+        .menu-overlay.active { opacity: 1; visibility: visible; }
+        .menu-panel { position: fixed; top: 0; right: -320px; width: 300px; height: 100%; background-color: #f5f0eb; background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(184, 176, 165, 0.08) 2px, rgba(184, 176, 165, 0.08) 3px), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(184, 176, 165, 0.08) 2px, rgba(184, 176, 165, 0.08) 3px); z-index: 101; padding: 80px 35px 35px; transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: -10px 0 30px rgba(0,0,0,0.15); }
+        .menu-panel.active { right: 0; }
+        .menu-panel a { display: block; font-family: 'Cormorant Garamond', serif; font-size: 24px; color: #333; text-decoration: none; padding: 18px 0; border-bottom: 1px solid rgba(184, 176, 165, 0.3); transition: all 0.3s; letter-spacing: 2px; }
+        .menu-panel a:hover { color: #8b7355; padding-left: 10px; }
+        .menu-close { position: absolute; top: 25px; right: 25px; width: 40px; height: 40px; background: none; border: 1.5px solid #a89f93; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
+        .menu-close:hover { background: rgba(0,0,0,0.05); border-color: #8b7355; }
+        .menu-close svg { width: 18px; height: 18px; stroke: #555; fill: none; stroke-width: 2; }
+        
+        .music-toggle-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f5f0eb 0%, #e8e0d9 100%);
+            border: 1.5px solid #c9a87c;
+            color: #8b7355;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+        .music-toggle-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(139, 115, 85, 0.3);
+            background: linear-gradient(135deg, #faf8f5 0%, #f5f0eb 100%);
+        }
+        .music-icon {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+        }
+        .music-toggle-btn.playing {
+            border-color: #8b7355;
+            background: linear-gradient(135deg, #8b7355 0%, #6b5344 100%);
+            color: #f5f0eb;
+        }
+        .music-toggle-btn.playing .music-icon {
+            animation: pulseMusic 1.5s ease-in-out infinite;
+        }
+        @keyframes pulseMusic {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+        @media (max-width: 480px) {
+            .music-toggle-btn { bottom: 20px; right: 20px; width: 45px; height: 45px; }
+            .music-icon { width: 22px; height: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <script>document.body.style.overflow = 'hidden';</script>
+
+    <div class="intro-overlay" id="introOverlay">
+        <div class="intro-pearls">
+            <div class="intro-pearl" style="top: 15%; left: 15%; width: 12px; height: 12px; animation-delay: 0s;"></div>
+            <div class="intro-pearl" style="top: 25%; right: 20%; width: 16px; height: 16px; animation-delay: 1s;"></div>
+            <div class="intro-pearl" style="bottom: 20%; left: 20%; width: 14px; height: 14px; animation-delay: 2s;"></div>
+            <div class="intro-pearl" style="bottom: 15%; right: 15%; width: 10px; height: 10px; animation-delay: 1.5s;"></div>
+            <div class="intro-pearl" style="top: 50%; left: 10%; width: 8px; height: 8px; animation-delay: 0.5s;"></div>
+            <div class="intro-pearl" style="top: 40%; right: 12%; width: 10px; height: 10px; animation-delay: 2.5s;"></div>
+        </div>
+        <h1 class="intro-title">Приглашаем вас<br>на нашу свадьбу!</h1>
+        <div class="intro-envelope" id="introEnvelope" tabindex="0" role="button" aria-label="Открыть приглашение">
+            <div class="envelope-flap-top"></div><div class="envelope-body"></div><div class="envelope-flap-left"></div><div class="envelope-flap-right"></div><div class="envelope-flap-bottom"></div>
+            <div class="wax-seal">PE</div>
+        </div>
+        <p class="intro-hint">Нажмите на конверт, чтобы открыть приглашение</p>
+    </div>
+
+    <div class="page-wrapper">
+        <div class="pearl-decoration pearl-left"><div class="pearl-string"><div class="pearl"></div><div class="pearl"></div><div class="pearl"></div><div class="pearl"></div><div class="pearl"></div><div class="pearl"></div><div class="pearl"></div></div></div>
+        <div class="pearl-decoration pearl-right"><div class="pearl-string"><div class="pearl"></div><div class="pearl"></div><div class="pearl"></div><div class="pearl"></div><div class="pearl"></div><div class="pearl"></div><div class="pearl"></div></div></div>
+
+        <header class="header">
+            <div class="header-center"><div class="logo gold-foil">AreOne</div><div class="date">10 10 26</div></div>
+            <button class="btn-menu" id="menuBtn" aria-label="Меню"><svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+        </header>
+
+        <main class="main-content" id="main">
+            <h1 class="names"><span class="first-name">Павел</span><span class="second-name">Екатерина</span></h1>
+            <p class="subtitle">Наша свадьба!</p>
+        </main>
+
+        <div class="photo-section">
+            <div class="photo-container">
+                <div class="photo-overlay"></div><div class="photo-overlay-bottom"></div>
+                <img src="вступление.jpg" alt="Павел и Екатерина" loading="eager" fetchpriority="high" width="800" height="600">
+            </div>
+        </div>
+
+        <section class="quote-section" id="story">
+            <div class="quote-container">
+                <div class="quote-decoration"><div class="quote-line"></div><div class="quote-pearl"></div><div class="quote-line"></div></div>
+                <p class="quote-text">ЛЮБОВЬ — ЭТО ВЫБОР, КОТОРЫЙ МЫ ДЕЛАЕМ КАЖДЫЙ ДЕНЬ, И В ЭТОТ ОСОБЕННЫЙ ВЕЧЕР МЫ СКАЖЕМ «ДА» ДРУГ ДРУГУ ПЕРЕД ТЕМИ, КТО ДОРОГ НАМ БОЛЬШЕ ВСЕГО.</p>
+                <div class="quote-decoration"><div class="quote-line"></div><div class="quote-pearl"></div><div class="quote-line"></div></div>
+            </div>
+        </section>
+
+        <section class="invitation-section">
+            <div class="invitation-header">
+                <h2 class="invitation-title">ДОРОГИЕ</h2>
+                <h2 class="invitation-title">РОДНЫЕ & ДРУЗЬЯ!</h2>
+                <p class="invitation-subtitle">Приглашаем вас!</p>
+            </div>
+            <div class="invitation-pearls"><div class="invitation-pearl"></div><div class="invitation-pearl"></div><div class="invitation-pearl"></div><div class="invitation-pearl"></div><div class="invitation-pearl"></div><div class="invitation-pearl"></div><div class="invitation-pearl"></div><div class="invitation-pearl"></div><div class="invitation-pearl"></div><div class="invitation-pearl"></div><div class="invitation-pearl"></div><div class="invitation-pearl"></div><div class="invitation-pearl"></div><div class="invitation-pearl"></div><div class="invitation-pearl"></div></div>
+            <div class="envelope-container">
+                <div class="envelope">
+                    <div class="envelope-card-main">
+                        <div class="paper-clip"></div>
+                        <div class="card-text-main">
+                            <p>Бывают в жизни моменты, когда сердце говорит громче слов. Именно в такой момент мы поняли, что хотим пройти этот путь вместе. Держась за руки, деля пополам и радости, и тишину.</p>
+                            <p>Мы счастливы сообщить, что решили стать семьёй. И этот день мы мечтаем прожить не просто как церемонию, а как тёплую встречу людей, без которых наша история была бы неполной.</p>
+                            <div class="decorative-line"></div>
+                        </div>
+                    </div>
+                    <div class="monogram">PE</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="calendar-section" id="date">
+            <div class="calendar-container">
+                <h2 class="calendar-month">ОКТЯБРЬ</h2>
+                <div class="calendar-days-wrapper">
+                    <div class="calendar-day"><div class="day-name">Пятница</div><div class="day-number">9</div></div>
+                    <div class="calendar-day highlighted"><div class="day-name">Суббота</div><div class="day-number">10</div><div class="hanging-pearl"><div class="pearl-chain"></div><div class="pearl-drop"></div></div></div>
+                    <div class="calendar-day"><div class="day-name">Воскресенье</div><div class="day-number">11</div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="photo-frame-section">
+            <div class="photo-frame-container">
+                <div class="pearl-frame" id="pearlFrame">
+                    <div class="pearl-border">
+                        <div class="pearl-row top"><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div></div>
+                        <div class="pearl-row bottom"><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div></div>
+                        <div class="pearl-column left"><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div></div>
+                        <div class="pearl-column right"><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div><div class="frame-pearl"></div></div>
+                    </div>
+                    <div class="corner-pearl top-left"></div><div class="corner-pearl top-right"></div><div class="corner-pearl bottom-left"></div><div class="corner-pearl bottom-right"></div>
+                    <div class="photo-wrapper"><img src="мы.png" alt="Павел и Екатерина" loading="lazy" width="800" height="600"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="countdown-section">
+            <div class="countdown-container">
+                <h2 class="countdown-title">ОБРАТНЫЙ ОТСЧЁТ</h2><p class="countdown-subtitle">До нашего особенного дня</p>
+                <div class="countdown-timer">
+                    <div class="countdown-item"><div class="countdown-number" id="days">00</div><div class="countdown-label">Дней</div></div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item"><div class="countdown-number" id="hours">00</div><div class="countdown-label">Часов</div></div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item"><div class="countdown-number" id="minutes">00</div><div class="countdown-label">Минут</div></div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item"><div class="countdown-number" id="seconds">00</div><div class="countdown-label">Секунд</div></div>
+                </div>
+                <div class="countdown-date">10 . 10 . 2026</div>
+                <div class="countdown-pearls"><div class="countdown-pearl"></div><div class="countdown-pearl"></div><div class="countdown-pearl"></div><div class="countdown-pearl"></div><div class="countdown-pearl"></div><div class="countdown-pearl"></div><div class="countdown-pearl"></div></div>
+            </div>
+        </section>
+
+        <section class="program-section" id="schedule">
+            <div class="program-title"><h2 class="program-main-title">ПРОГРАММА</h2><p class="program-subtitle">дня</p></div>
+            <div class="pearl-snake-container" id="pearlSnake">
+                <svg class="snake-svg" viewBox="0 0 380 620" preserveAspectRatio="xMidYMid meet"><path id="snakePath" class="snake-path" d="M 190 40 C 190 40, 80 90, 80 140 C 80 200, 300 230, 300 290 C 300 350, 80 380, 80 440 C 80 500, 190 530, 190 540" /></svg>
+                <div class="timeline-label" id="label1"><div class="label-time">13:00</div><div class="label-event">Выкуп невесты</div></div>
+                <div class="timeline-label" id="label2"><div class="label-time">16:00</div><div class="label-event">Церемония</div></div>
+                <div class="timeline-label" id="label3"><div class="label-time">17:00</div><div class="label-event">Банкет</div></div>
+                <div class="timeline-label" id="label4"><div class="label-time">23:00</div><div class="label-event">Завершение вечера</div></div>
+                <div class="final-brooch"><div class="brooch-petal"></div><div class="brooch-petal"></div><div class="brooch-petal"></div><div class="brooch-petal"></div><div class="brooch-pearl"></div></div>
+            </div>
+        </section>
+
+        <section class="venue-section" id="location">
+            <h2 class="venue-title">ЛОКАЦИЯ</h2><p class="venue-subtitle">Сохраните место!</p>
+            <div class="venue-container">
+                <div class="ornate-frame">
+                    <div class="venue-highlight"></div><div class="frame-decoration"></div>
+                    <div class="side-pearls left"><div class="side-pearl"></div><div class="side-pearl"></div><div class="side-pearl"></div><div class="side-pearl"></div><div class="side-pearl"></div></div>
+                    <div class="side-pearls right"><div class="side-pearl"></div><div class="side-pearl"></div><div class="side-pearl"></div><div class="side-pearl"></div><div class="side-pearl"></div></div>
+                    <div class="venue-card">
+                        <div class="venue-info-section">
+                            <div class="info-label">ВЫКУП</div>
+                            <div class="venue-address">Красный Сулин, ул. Косиора, 75</div>
+                            <div class="map-cutout">
+                                <div class="map-pin"></div>
+                                <iframe src="https://yandex.ru/map-widget/v1/?text=Красный+Сулин,+улица+Косиора,+75&z=17" allowfullscreen loading="lazy"></iframe>
+                                <div class="map-caption">Яндекс Карты</div>
+                            </div>
+                            <a href="https://yandex.ru/maps/?text=Красный+Сулин,+ул.+Косиора,+75" target="_blank" class="view-map">Открыть на карте →</a>
+                        </div>
+                        <div class="venue-divider"></div>
+                        <div class="venue-info-section">
+                            <div class="info-label">ЦЕРЕМОНИЯ & БАНКЕТ</div>
+                            <div class="venue-name">Ресторан «Империя»</div>
+                            <div class="venue-address">Красный Сулин, ул. Заводская, 1</div>
+                            <div class="map-cutout">
+                                <div class="map-pin"></div>
+                                <iframe src="https://yandex.ru/map-widget/v1/?text=Красный+Сулин,+ресторан+Империя,+улица+Заводская,+1&z=17" allowfullscreen loading="lazy"></iframe>
+                                <div class="map-caption">Яндекс Карты</div>
+                            </div>
+                            <a href="https://yandex.ru/maps/?text=Красный+Сулин,+ресторан+Империя,+ул.+Заводская,+1" target="_blank" class="view-map">Открыть на карте →</a>
+                        </div>
+                    </div>
+                    <div class="pearl-arc" id="venuePearlArc">
+                        <div class="pearl-thread"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path id="venueThreadPath" d="M 2,35 Q 50,95 98,35" fill="none" stroke="rgba(180,170,155,0.6)" stroke-width="0.8"/></svg></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="dresscode-section" id="dresscode">
+            <div class="dresscode-background-photo">
+                <img src="одежда.jpg" alt="Павел и Екатерина">
+                <div class="dresscode-background-overlay"></div>
+            </div>
+            <div class="dresscode-content">
+                <div class="dresscode-vertical-title">ДРЕСС-КОД</div>
+                <div class="dresscode-palette-wrapper">
+                    <p class="dresscode-subtitle-new">Нам будет приятно, если вы поддержите стилистику нашей свадьбы и используете в своих нарядах предложенные цвета.</p>
+                    <div class="palette-container">
+                        <div class="palette-row">
+                            <div class="color-circle color-1"><span class="tooltip">Кремовый</span></div>
+                            <div class="color-circle color-2"><span class="tooltip">Бежевый</span></div>
+                            <div class="color-circle color-3"><span class="tooltip">Шалфей</span></div>
+                            <div class="color-circle color-4"><span class="tooltip">Оливковый</span></div>
+                        </div>
+                        <div class="palette-row">
+                            <div class="color-circle color-5"><span class="tooltip">Тауп</span></div>
+                            <div class="color-circle color-6"><span class="tooltip">Шоколадный</span></div>
+                            <div class="color-circle color-7"><span class="tooltip">Тёмный</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="details-section" id="details">
+            <div class="details-container">
+                <h2 class="details-title">ДЕТАЛИ ТОРЖЕСТВА</h2>
+                <div class="envelope-card">
+                    <div class="envelope-flap"></div>
+                    <div class="pearl-clasp">
+                        <svg viewBox="0 0 50 30" xmlns="http://www.w3.org/2000/svg">
+                            <defs><radialGradient id="pearlGrad1"><stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" /><stop offset="50%" style="stop-color:#f5f0eb;stop-opacity:1" /><stop offset="100%" style="stop-color:#d4c4b8;stop-opacity:1" /></radialGradient></defs>
+                            <ellipse cx="18" cy="15" rx="10" ry="7" fill="url(#pearlGrad1)" transform="rotate(-15 18 15)"/>
+                            <ellipse cx="32" cy="15" rx="10" ry="7" fill="url(#pearlGrad1)" transform="rotate(15 32 15)"/>
+                            <circle cx="25" cy="15" r="5" fill="#c9c0b5"/><circle cx="25" cy="15" r="2.5" fill="#f5f0eb"/>
+                            <circle cx="16" cy="13" r="1.5" fill="rgba(255,255,255,0.8)"/><circle cx="34" cy="13" r="1.5" fill="rgba(255,255,255,0.8)"/>
+                        </svg>
+                    </div>
+                    <div class="corner-pearl-detail top-left"></div><div class="corner-pearl-detail top-right"></div><div class="corner-pearl-detail bottom-left"></div><div class="corner-pearl-detail bottom-right"></div>
+                    <div class="letter-content">
+                        <div class="card-illustration">
+                            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="giftBox" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#f5e6d3;stop-opacity:1" /><stop offset="50%" style="stop-color:#e8d5c0;stop-opacity:1" /><stop offset="100%" style="stop-color:#d4c0a8;stop-opacity:1" /></linearGradient>
+                                    <linearGradient id="giftRibbon" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#c9a87c;stop-opacity:1" /><stop offset="50%" style="stop-color:#b8956a;stop-opacity:1" /><stop offset="100%" style="stop-color:#a07d52;stop-opacity:1" /></linearGradient>
+                                    <linearGradient id="giftBow" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#d4b896;stop-opacity:1" /><stop offset="100%" style="stop-color:#b8956a;stop-opacity:1" /></linearGradient>
+                                </defs>
+                                <ellipse cx="60" cy="105" rx="35" ry="6" fill="rgba(0,0,0,0.1)" filter="blur(2px)"/>
+                                <rect x="25" y="50" width="70" height="50" rx="3" fill="url(#giftBox)" stroke="#b8956a" stroke-width="1.5"/>
+                                <rect x="22" y="42" width="76" height="12" rx="2" fill="url(#giftBox)" stroke="#b8956a" stroke-width="1.5"/>
+                                <rect x="22" y="42" width="76" height="4" rx="2" fill="rgba(255,255,255,0.3)"/>
+                                <rect x="55" y="42" width="10" height="58" fill="url(#giftRibbon)" opacity="0.9"/>
+                                <rect x="22" y="46" width="76" height="4" fill="url(#giftRibbon)" opacity="0.9"/>
+                                <ellipse cx="45" cy="38" rx="12" ry="8" fill="url(#giftBow)" transform="rotate(-30 45 38)"/>
+                                <ellipse cx="75" cy="38" rx="12" ry="8" fill="url(#giftBow)" transform="rotate(30 75 38)"/>
+                                <circle cx="60" cy="38" r="6" fill="#b8956a"/><circle cx="60" cy="38" r="3" fill="#d4b896"/>
+                                <rect x="28" y="53" width="25" height="3" rx="1.5" fill="rgba(255,255,255,0.4)"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Подарки</h3><div class="divider-detail"></div>
+                        <p class="card-text-detail">Мы будем очень благодарны вкладу в бюджет нашей семьи.<br>Это поможет воплотить наши мечты.</p>
+                    </div>
+                </div>
+
+                <div class="envelope-card">
+                    <div class="envelope-flap"></div>
+                    <div class="pearl-clasp">
+                        <svg viewBox="0 0 50 30" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse cx="18" cy="15" rx="10" ry="7" fill="url(#pearlGrad1)" transform="rotate(-15 18 15)"/>
+                            <ellipse cx="32" cy="15" rx="10" ry="7" fill="url(#pearlGrad1)" transform="rotate(15 32 15)"/>
+                            <circle cx="25" cy="15" r="5" fill="#c9c0b5"/><circle cx="25" cy="15" r="2.5" fill="#f5f0eb"/>
+                            <circle cx="16" cy="13" r="1.5" fill="rgba(255,255,255,0.8)"/><circle cx="34" cy="13" r="1.5" fill="rgba(255,255,255,0.8)"/>
+                        </svg>
+                    </div>
+                    <div class="corner-pearl-detail top-left"></div><div class="corner-pearl-detail top-right"></div><div class="corner-pearl-detail bottom-left"></div><div class="corner-pearl-detail bottom-right"></div>
+                    <div class="letter-content">
+                        <div class="card-illustration">
+                            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <radialGradient id="flower1"><stop offset="0%" style="stop-color:#f5d5e0;stop-opacity:1" /><stop offset="100%" style="stop-color:#e8a8b8;stop-opacity:1" /></radialGradient>
+                                    <radialGradient id="flower2"><stop offset="0%" style="stop-color:#f5e6d3;stop-opacity:1" /><stop offset="100%" style="stop-color:#e8d0b8;stop-opacity:1" /></radialGradient>
+                                    <radialGradient id="flower3"><stop offset="0%" style="stop-color:#e8d5f5;stop-opacity:1" /><stop offset="100%" style="stop-color:#d0b8e8;stop-opacity:1" /></radialGradient>
+                                    <linearGradient id="leaf"><stop offset="0%" style="stop-color:#a8c8a0;stop-opacity:1" /><stop offset="100%" style="stop-color:#88a880;stop-opacity:1" /></linearGradient>
+                                </defs>
+                                <ellipse cx="60" cy="108" rx="30" ry="5" fill="rgba(0,0,0,0.1)" filter="blur(2px)"/>
+                                <path d="M60 70 Q 58 85, 60 100" stroke="#88a880" stroke-width="2" fill="none"/>
+                                <path d="M50 75 Q 48 88, 50 100" stroke="#88a880" stroke-width="2" fill="none"/>
+                                <path d="M70 75 Q 72 88, 70 100" stroke="#88a880" stroke-width="2" fill="none"/>
+                                <ellipse cx="45" cy="85" rx="8" ry="4" fill="url(#leaf)" transform="rotate(-45 45 85)"/>
+                                <ellipse cx="75" cy="85" rx="8" ry="4" fill="url(#leaf)" transform="rotate(45 75 85)"/>
+                                <circle cx="60" cy="55" r="18" fill="url(#flower1)"/><circle cx="52" cy="48" r="8" fill="url(#flower1)"/>
+                                <circle cx="68" cy="48" r="8" fill="url(#flower1)"/><circle cx="52" cy="62" r="8" fill="url(#flower1)"/>
+                                <circle cx="68" cy="62" r="8" fill="url(#flower1)"/><circle cx="60" cy="55" r="6" fill="#f5d5e0"/>
+                                <circle cx="45" cy="65" r="14" fill="url(#flower2)"/><circle cx="39" cy="60" r="6" fill="url(#flower2)"/>
+                                <circle cx="51" cy="60" r="6" fill="url(#flower2)"/><circle cx="39" cy="70" r="6" fill="url(#flower2)"/>
+                                <circle cx="51" cy="70" r="6" fill="url(#flower2)"/><circle cx="45" cy="65" r="5" fill="#f5e6d3"/>
+                                <circle cx="75" cy="65" r="14" fill="url(#flower3)"/><circle cx="69" cy="60" r="6" fill="url(#flower3)"/>
+                                <circle cx="81" cy="60" r="6" fill="url(#flower3)"/><circle cx="69" cy="70" r="6" fill="url(#flower3)"/>
+                                <circle cx="81" cy="70" r="6" fill="url(#flower3)"/><circle cx="75" cy="65" r="5" fill="#e8d5f5"/>
+                                <circle cx="55" cy="50" r="3" fill="rgba(255,255,255,0.5)"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Цветы</h3><div class="divider-detail"></div>
+                        <p class="card-text-detail">Пожалуйста, не дарите нам цветов.<br>Мы не успеем насладиться их красотой.</p>
+                    </div>
+                </div>
+
+                <div class="envelope-card">
+                    <div class="envelope-flap"></div>
+                    <div class="pearl-clasp">
+                        <svg viewBox="0 0 50 30" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse cx="18" cy="15" rx="10" ry="7" fill="url(#pearlGrad1)" transform="rotate(-15 18 15)"/>
+                            <ellipse cx="32" cy="15" rx="10" ry="7" fill="url(#pearlGrad1)" transform="rotate(15 32 15)"/>
+                            <circle cx="25" cy="15" r="5" fill="#c9c0b5"/><circle cx="25" cy="15" r="2.5" fill="#f5f0eb"/>
+                            <circle cx="16" cy="13" r="1.5" fill="rgba(255,255,255,0.8)"/><circle cx="34" cy="13" r="1.5" fill="rgba(255,255,255,0.8)"/>
+                        </svg>
+                    </div>
+                    <div class="corner-pearl-detail top-left"></div><div class="corner-pearl-detail top-right"></div><div class="corner-pearl-detail bottom-left"></div><div class="corner-pearl-detail bottom-right"></div>
+                    <div class="letter-content">
+                        <div class="card-illustration">
+                            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <radialGradient id="babyFace"><stop offset="0%" style="stop-color:#ffe8d6;stop-opacity:1" /><stop offset="100%" style="stop-color:#f5d5c0;stop-opacity:1" /></radialGradient>
+                                    <linearGradient id="babyBody"><stop offset="0%" style="stop-color:#f5e6d3;stop-opacity:1" /><stop offset="100%" style="stop-color:#e8d5c0;stop-opacity:1" /></linearGradient>
+                                </defs>
+                                <ellipse cx="60" cy="108" rx="28" ry="5" fill="rgba(0,0,0,0.1)" filter="blur(2px)"/>
+                                <ellipse cx="60" cy="85" rx="22" ry="20" fill="url(#babyBody)"/>
+                                <circle cx="60" cy="55" r="25" fill="url(#babyFace)"/>
+                                <circle cx="48" cy="60" r="6" fill="#f5c5b0" opacity="0.6"/><circle cx="72" cy="60" r="6" fill="#f5c5b0" opacity="0.6"/>
+                                <circle cx="52" cy="52" r="3" fill="#5a4a3a"/><circle cx="68" cy="52" r="3" fill="#5a4a3a"/>
+                                <circle cx="53" cy="51" r="1" fill="#ffffff"/><circle cx="69" cy="51" r="1" fill="#ffffff"/>
+                                <ellipse cx="60" cy="58" rx="2" ry="1.5" fill="#e8a890"/>
+                                <path d="M55 63 Q 60 66, 65 63" stroke="#c89880" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                                <path d="M50 35 Q 55 30, 60 32 Q 65 30, 70 35" stroke="#d4b896" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                <path d="M55 33 Q 58 28, 62 30" stroke="#d4b896" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                                <ellipse cx="42" cy="80" rx="6" ry="8" fill="url(#babyFace)" transform="rotate(-20 42 80)"/>
+                                <ellipse cx="78" cy="80" rx="6" ry="8" fill="url(#babyFace)" transform="rotate(20 78 80)"/>
+                                <circle cx="52" cy="45" r="4" fill="rgba(255,255,255,0.4)"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Дети</h3><div class="divider-detail"></div>
+                        <p class="card-text-detail">Мы будем рады маленьким гостям на нашей свадьбе!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="questionnaire-section" id="rsvp">
+            <div class="questionnaire-container">
+                <h2 class="questionnaire-title">АНКЕТА ГОСТЯ</h2>
+                <div class="envelope-card">
+                    <div class="envelope-flap"></div>
+                    <div class="pearl-clasp">
+                        <svg viewBox="0 0 50 30" xmlns="http://www.w3.org/2000/svg">
+                            <defs><radialGradient id="pearlGradQ"><stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" /><stop offset="50%" style="stop-color:#f5f0eb;stop-opacity:1" /><stop offset="100%" style="stop-color:#d4c4b8;stop-opacity:1" /></radialGradient></defs>
+                            <ellipse cx="18" cy="15" rx="10" ry="7" fill="url(#pearlGradQ)" transform="rotate(-15 18 15)"/>
+                            <ellipse cx="32" cy="15" rx="10" ry="7" fill="url(#pearlGradQ)" transform="rotate(15 32 15)"/>
+                            <circle cx="25" cy="15" r="5" fill="#c9c0b5"/><circle cx="25" cy="15" r="2.5" fill="#f5f0eb"/>
+                            <circle cx="16" cy="13" r="1.5" fill="rgba(255,255,255,0.8)"/><circle cx="34" cy="13" r="1.5" fill="rgba(255,255,255,0.8)"/>
+                        </svg>
+                    </div>
+                    <div class="corner-pearl-detail top-left"></div><div class="corner-pearl-detail top-right"></div><div class="corner-pearl-detail bottom-left"></div><div class="corner-pearl-detail bottom-right"></div>
+                    <div class="letter-content">
+                        <p class="form-subtitle">Просим вас заполнить анкету, чтобы мы смогли организовать торжество наилучшим образом</p>
+                        
+                        <!-- ФОРМА ДЛЯ FORMSPREE -->
+                        <form id="guestForm" action="https://formspree.io/f/mkjwbdkd" method="POST">
+                            <div class="form-group">
+                                <label class="form-label" for="name">Имя Фамилия</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="Введите текст" required>
+                                <span class="input-highlight"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Ваше присутствие</label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="attendance" value="Буду на выкупе и на банкете" required>
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-label">Буду на выкупе и на банкете</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="attendance" value="Буду только на банкете">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-label">Буду только на банкете</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="attendance" value="К сожалению, не смогу присутствовать">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-label">К сожалению, не смогу присутствовать</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="allergy">Есть ли у вас аллергия, о которой нам стоит знать?</label>
+                                <input type="text" id="allergy" name="allergy" class="form-input" placeholder="Введите текст">
+                                <span class="input-highlight"></span>
+                            </div>
+                            <button type="submit" class="submit-btn">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts-final-section" id="contacts">
+            <div class="contacts-container">
+                <h2 class="contacts-main-title">КОНТАКТЫ</h2>
+                <div class="contacts-subtitle-text">Если у вас возникнут вопросы, вы можете обратиться к молодожёнам</div>
+                <div class="decorative-line-contacts"></div>
+                <div class="contacts-grid">
+                    <div class="contact-item-card">
+                        <div class="contact-name">Павел</div>
+                        <a href="tel:+79895137781" class="contact-phone-link">8 989 513-77-81</a>
+                    </div>
+                    <div class="contact-item-card">
+                        <div class="contact-name">Екатерина</div>
+                        <a href="tel:+79284342454" class="contact-phone-link">8 928 434-24-54</a>
+                    </div>
+                </div>
+                <div class="contacts-photo-section">
+                    <div class="contacts-photo-container">
+                        <img src="глаза.jpg" alt="Павел и Екатерина" class="couple-photo" loading="lazy" width="800" height="600">
+                        <div class="photo-overlay-contacts"></div>
+                        <div class="photo-border-contacts"></div>
+                        <div class="photo-pearl-contact top-left"></div>
+                        <div class="photo-pearl-contact top-right"></div>
+                        <div class="photo-pearl-contact bottom-left"></div>
+                        <div class="photo-pearl-contact bottom-right"></div>
+                    </div>
+                </div>
+                <div class="final-message">С любовью, Павел и Екатерина</div>
+            </div>
+        </section>
+    </div>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="menu-panel" id="menuPanel">
+        <button class="menu-close" id="menuClose">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <a href="#main">Главная</a>
+        <a href="#story">История</a>
+        <a href="#date">Дата</a>
+        <a href="#schedule">Расписание</a>
+        <a href="#location">Место</a>
+        <a href="#dresscode">Дресс-код</a>
+        <a href="#details">Детали</a>
+        <a href="#rsvp">Анкета</a>
+        <a href="#contacts">Контакты</a>
+    </div>
+
+    <audio id="weddingMusic" loop>
+        <source src="песня.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="musicToggle" class="music-toggle-btn" aria-label="Включить музыку">
+        <svg class="music-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18V5l12-2v13"></path>
+            <circle cx="6" cy="18" r="3"></circle>
+            <circle cx="18" cy="16" r="3"></circle>
+        </svg>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const musicToggle = document.getElementById('musicToggle');
+            const weddingMusic = document.getElementById('weddingMusic');
+            let isPlaying = false;
+            weddingMusic.volume = 0.5;
+
+            musicToggle.addEventListener('click', () => {
+                if (isPlaying) {
+                    weddingMusic.pause();
+                    musicToggle.classList.remove('playing');
+                    isPlaying = false;
+                } else {
+                    weddingMusic.play().catch(error => console.log("Воспроизведение заблокировано:", error));
+                    musicToggle.classList.add('playing');
+                    isPlaying = true;
+                }
+            });
+
+            const introEnv = document.getElementById('introEnvelope');
+            if (introEnv) {
+                introEnv.addEventListener('click', () => {
+                    setTimeout(() => {
+                        weddingMusic.play().catch(e => console.log(e));
+                        musicToggle.classList.add('playing');
+                        isPlaying = true;
+                    }, 800);
+                });
+            }
+            
+            const introOverlay = document.getElementById('introOverlay');
+            const introEnvelope = document.getElementById('introEnvelope');
+            if (introOverlay && introEnvelope) {
+                introEnvelope.addEventListener('click', () => {
+                    introEnvelope.classList.add('opened');
+                    setTimeout(() => {
+                        introOverlay.classList.add('hidden');
+                        document.body.style.overflow = 'auto';
+                    }, 600);
+                });
+                introEnvelope.addEventListener('keypress', (e) => { if (e.key === 'Enter') introEnvelope.click(); });
+            }
+
+            const menuBtn = document.getElementById('menuBtn');
+            const menuOverlay = document.getElementById('menuOverlay');
+            const menuPanel = document.getElementById('menuPanel');
+            const menuClose = document.getElementById('menuClose');
+            function openMenu() { if (menuOverlay && menuPanel) { menuOverlay.classList.add('active'); menuPanel.classList.add('active'); } }
+            function closeMenu() { if (menuOverlay && menuPanel) { menuOverlay.classList.remove('active'); menuPanel.classList.remove('active'); } }
+            if (menuBtn) menuBtn.addEventListener('click', openMenu);
+            if (menuOverlay) menuOverlay.addEventListener('click', closeMenu);
+            if (menuClose) menuClose.addEventListener('click', closeMenu);
+            
+            document.querySelectorAll('.menu-panel a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault(); closeMenu();
+                    const target = document.querySelector(link.getAttribute('href'));
+                    if (target) target.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                document.querySelectorAll('.pearl').forEach((pearl, i) => {
+                    pearl.style.transform = `translateY(${scrolled * (0.05 + (i * 0.01))}px)`;
+                });
+            });
+
+            const pearlFrame = document.getElementById('pearlFrame');
+            if (pearlFrame) {
+                pearlFrame.addEventListener('mousemove', (e) => {
+                    const rect = pearlFrame.getBoundingClientRect();
+                    const rotateX = ((e.clientY - rect.top - rect.height / 2) / (rect.height / 2)) * 6;
+                    const rotateY = ((rect.width / 2 - (e.clientX - rect.left)) / (rect.width / 2)) * 6;
+                    pearlFrame.style.transform = `translateY(-8px) perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                });
+                pearlFrame.addEventListener('mouseleave', () => { pearlFrame.style.transform = 'translateY(0) perspective(1000px) rotateX(0) rotateY(0)'; });
+            }
+
+            const weddingDate = new Date('2026-10-10T00:00:00').getTime();
+            function updateCountdown() {
+                const distance = weddingDate - new Date().getTime();
+                if (distance < 0) {
+                    ['days', 'hours', 'minutes', 'seconds'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = '00'; });
+                    return;
+                }
+                const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const s = Math.floor((distance % (1000 * 60)) / 1000);
+                const dEl = document.getElementById('days'), hEl = document.getElementById('hours'), mEl = document.getElementById('minutes'), sEl = document.getElementById('seconds');
+                if (dEl) dEl.textContent = d.toString().padStart(2, '0');
+                if (hEl) hEl.textContent = h.toString().padStart(2, '0');
+                if (mEl) mEl.textContent = m.toString().padStart(2, '0');
+                if (sEl) sEl.textContent = s.toString().padStart(2, '0');
+            }
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            function generatePearlSnake() {
+                const path = document.getElementById('snakePath');
+                const container = document.getElementById('pearlSnake');
+                if (!path || !container) return;
+                const containerRect = container.getBoundingClientRect();
+                const scale = Math.min(containerRect.width / 380, containerRect.height / 620);
+                const offsetX = (containerRect.width - 380 * scale) / 2;
+                const offsetY = (containerRect.height - 620 * scale) / 2;
+                container.querySelectorAll('.path-pearl, .event-pearl').forEach(p => p.remove());
+                const eventPositions = [0.08, 0.35, 0.62, 0.88];
+                let distance = 0, pearlIndex = 0;
+                while (distance <= path.getTotalLength()) {
+                    const point = path.getPointAtLength(distance);
+                    const isEvent = eventPositions.some((ep, i) => Math.abs(distance - ep * path.getTotalLength()) < 7);
+                    if (!isEvent) {
+                        const pearl = document.createElement('div');
+                        pearl.className = 'path-pearl';
+                        pearl.style.cssText = `width:11px;height:11px;left:${point.x * scale + offsetX}px;top:${point.y * scale + offsetY}px;animation-delay:${pearlIndex * 0.1}s;`;
+                        container.appendChild(pearl);
+                    }
+                    distance += 14; pearlIndex++;
+                }
+                const labelIds = ['label1', 'label2', 'label3', 'label4'];
+                eventPositions.forEach((ep, i) => {
+                    const point = path.getPointAtLength(ep * path.getTotalLength());
+                    const pearl = document.createElement('div');
+                    pearl.className = 'event-pearl';
+                    pearl.style.cssText = `width:32px;height:32px;left:${point.x * scale + offsetX}px;top:${point.y * scale + offsetY}px;`;
+                    container.appendChild(pearl);
+                    const label = document.getElementById(labelIds[i]);
+                    if (label) {
+                        label.style.left = (point.x * scale + offsetX + 35) + 'px';
+                        label.style.top = (point.y * scale + offsetY) + 'px';
+                        label.style.transform = 'translate(0, -50%)';
+                    }
+                });
+            }
+
+            function positionVenuePearls() {
+                const arc = document.getElementById('venuePearlArc');
+                if (!arc) return;
+                arc.querySelectorAll('.venue-pearl').forEach(p => p.remove());
+                for (let i = 0; i < 13; i++) {
+                    const pearl = document.createElement('div');
+                    pearl.className = 'venue-pearl';
+                    const t = (i / 12) * 2 - 1;
+                    pearl.style.cssText = `left:${4 + 92 * (i / 12)}%;top:${92 - 62 * (t * t)}%;`;
+                    if (i === 6) pearl.classList.add('center');
+                    arc.appendChild(pearl);
+                }
+            }
+            window.addEventListener('load', () => { generatePearlSnake(); positionVenuePearls(); });
+            window.addEventListener('resize', () => { generatePearlSnake(); positionVenuePearls(); });
+
+            document.querySelectorAll('.color-circle').forEach(circle => {
+                circle.addEventListener('click', function() {
+                    const tooltip = this.querySelector('.tooltip');
+                    if (tooltip) {
+                        tooltip.style.opacity = '1';
+                        setTimeout(() => { tooltip.style.opacity = ''; }, 2000);
+                    }
+                });
+            });
+
+            // ==========================================
+            // ОТПРАВКА ФОРМЫ ЧЕРЕЗ FORMSPREE
+            // ==========================================
+            const guestForm = document.getElementById('guestForm');
+            if (guestForm) {
+                guestForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const form = this;
+                    const btn = form.querySelector('.submit-btn');
+                    const originalText = btn.textContent;
+                    
+                    btn.textContent = 'Отправка...';
+                    btn.disabled = true;
+                    btn.style.opacity = '0.7';
+
+                    const formData = new FormData(form);
+
+                    fetch("https://formspree.io/f/mkjwbdkd", {
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            btn.textContent = 'Отправлено ✓';
+                            btn.style.background = 'linear-gradient(135deg, #8b7355 0%, #6b5344 100%)';
+                            btn.style.color = '#ffffff';
+                            form.reset();
+                            
+                            setTimeout(() => {
+                                btn.textContent = originalText;
+                                btn.style.background = '';
+                                btn.style.color = '';
+                                btn.disabled = false;
+                                btn.style.opacity = '1';
+                            }, 3000);
+                        } else {
+                            throw new Error('Ошибка сервера');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Form error:', error);
+                        btn.textContent = 'Ошибка';
+                        btn.style.color = '#d9534f';
+                        setTimeout(() => {
+                            btn.textContent = originalText;
+                            btn.style.color = '';
+                            btn.disabled = false;
+                            btn.style.opacity = '1';
+                        }, 3000);
+                    });
+                });
+            }
+
+            document.addEventListener('mousemove', (e) => {
+                const x = (window.innerWidth / 2 - e.pageX) / 80;
+                const y = (window.innerHeight / 2 - e.pageY) / 80;
+                document.querySelectorAll('.envelope-card, .contact-item-card').forEach((card, i) => {
+                    card.style.transform = `translate(${x * ((i + 1) * 0.2)}px, ${y * ((i + 1) * 0.2)}px)`;
+                });
+            });
+            document.addEventListener('mouseleave', () => {
+                document.querySelectorAll('.envelope-card, .contact-item-card').forEach(card => {
+                    card.style.transform = 'translate(0, 0)';
+                    card.style.transition = 'all 0.5s ease';
+                });
+            });
+            document.addEventListener('mouseenter', () => {
+                document.querySelectorAll('.envelope-card, .contact-item-card').forEach(card => { card.style.transition = 'none'; });
+            });
+        });
+    </script>
+</body>
+</html>
